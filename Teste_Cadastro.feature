@@ -206,7 +206,7 @@ Then Usúario é encaminhado para "Página do feirante"
 Scenario: Clicar no botão "CADASTRAR" sem preencher os campos
 Given Eu acessar página de cadastro
 When Não preencher nenhum dos campos  
-And Clicar no botão "CADASTRAR" 
+And Clicar no botão "CADASTRAR"
 Then Usuário permanecerá na página de cadastro
 
 
