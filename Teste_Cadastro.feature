@@ -20,6 +20,13 @@ And Preencher campo com "Banca teste"
 Then Campo será exibido com "Banca teste"
 
 @not_executed
+Scenario: Preencher o campo "Qual o nome da sua banca?"
+Given Eu acessar página de cadastro 
+When Selecionar campo  "Qual o nome da sua banca?"
+And Preencher campo com "B"
+Then Campo será exibido com "B"
+
+@not_executed
 Scenario: Preencher o campo "CEP"
 Given Eu acessar página de cadastro
 When Selecionar campo "CEP"
@@ -41,11 +48,25 @@ And Preencher campo "Estado" com "Rio de Janeiro"
 Then Campo será exibido com "Rio de Janeiro" 
 
 @not_executed
+Scenario: Preencher o campo "Estado" com dados inválidos
+Given Eu acessar página de cadastro
+When Selecionar campo "Estado"
+And Preencher campo "Estado" com "R"
+Then Não será possível preencher campo com "R" 
+
+@not_executed
 Scenario: Preencher o campo "Cidade"
 Given Eu acessar página de cadastro
 When Selecionar campo "Cidade"
 And Preencher campo com "Rio de Janeiro"
 Then Campo será exibido com "Rio de Janeiro" 
+
+@not_executed
+Scenario: Preencher o campo "Cidade" com dados inválidos
+Given Eu acessar página de cadastro
+When Selecionar campo "Cidade"
+And Preencher campo com "2"
+Then Não será possível preenhcer campo com "2" 
 
 @not_executed
 Scenario: Preencher o campo "Rua"
@@ -69,6 +90,13 @@ And Preencher campo com "100"
 Then Campo será exibido com "100" 
 
 @not_executed
+Scenario: Preencher o campo "Número" com dados inválidos
+Given Eu acessar página de cadastro
+When Selecionar campo "Número"
+And Preencher campo com "%$" 
+Then Não será possível preenhcer campo com "%$" 
+
+@not_executed
 Scenario: Preencher o campo "Complemento"
 Given Eu acessar página de cadastro
 When Selecionar campo "Complemento"
@@ -83,6 +111,27 @@ And Preencher campo com "(99) 99999-9999"
 Then Campo será exibido com "(99) 99999-9999" 
 
 @not_executed
+Scenario: Preencher o campo "Telefone" sem ddd
+Given Eu acessar página de cadastro
+When Selecionar campo "Telefone"
+And Preencher campo com "99999-9999" 
+Then Não será possível preencher campo sem ddd
+
+@not_executed
+Scenario: Preencher o campo "Telefone" com dados inválidos
+Given Eu acessar página de cadastro
+When Selecionar campo "Telefone"
+And Preencher campo com "(99) 99999-abcs" 
+Then Não será possível preencher campo com "(99) 99999-abcs"
+
+@not_executed
+Scenario: Preencher o campo "Telefone" com um caractere
+Given Eu acessar página de cadastro
+When Selecionar campo "Telefone"
+And Preencher campo com "s" 
+Then Não será possível preencher campo com "s"
+
+@not_executed
 Scenario: Preencher o campo "Whatsapp"
 Given Eu acessar página de cadastro
 When Selecionar campo "Whatsapp"
@@ -90,11 +139,25 @@ And Preencher campo com "(99) 99999-9999"
 Then Campo será exibido com "(99) 99999-9999" 
 
 @not_executed
+Scenario: Preencher o campo "Whatsapp"
+Given Eu acessar página de cadastro
+When Selecionar campo "Whatsapp"
+And Preencher campo com "(99) 99999-abcs"
+Then Não será possível preencher campo com "(99) 99999-abcs"
+
+@not_executed
 Scenario: Preencher o campo "Valor da sacola"
 Given Eu acessar página de cadastro
 When Selecionar campo "Valor da sacola"
 And Preencher campo com "R$10,00" 
 Then Campo será exibido com "R$10,00" 
+
+@not_executed
+Scenario: Preencher o campo "Valor da sacola" com dados inválidos
+Given Eu acessar página de cadastro
+When Selecionar campo "Valor da sacola"
+And Preencher campo com "a" 
+Then Não será possível preencher campo com "a" 
 
 @not_executed
 Scenario: Clicar no botão "+"
@@ -112,7 +175,7 @@ And Preencher campo com "x0987654;"
 Then Senha será criada
 
 @not_executed
-Scenario: Criar uma senha de acesso com dados invalidos
+Scenario: Criar uma senha de acesso com dados inválidos
 Given Eu acessar página de cadastro
 When Selecionar campo "Senha"
 And Preencher campo com "x;"
@@ -139,9 +202,17 @@ And Não prencher campo "complemento"
 And Clicar no botão "CADASTRAR" 
 Then Usúario é encaminhado para "Página do feirante"
 
+@not_executed
+Scenario: Clicar no botão "CADASTRAR" sem preencher os campos
+Given Eu acessar página de cadastro
+When Não preencher nenhum dos campos  
+And Clicar no botão "CADASTRAR" 
+Then Usuário permanecerá na página de cadastro
+
 
 
 
 #valor da sacola deverá colocar somente números ou deverá também digitar o R$?
-#quais serão os criteiso de aceite para senha?
-# minimo 7 caracteres, com um caractere especial, ao menos uma letra maiúscula ou minúscula,  e números, max 12
+#quais serão os critérios de aceite para senha?
+#minimo 7 caracteres, com um caractere especial, ao menos uma letra maiúscula ou minúscula,  e números, max 12 caracteres
+#Tentar fazer cadastro sem preenhcer campos obrigatórios, o que acontece?
