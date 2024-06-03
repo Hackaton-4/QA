@@ -1,8 +1,11 @@
 Feature: Página de Login
 
+@not_executed
 Scenario: Logo "Dia de Xepa" exibido de forma centralizada na parte superior da tela
-Given Acessar página inicial do Dia de Xepa
-When Clicar no botão "Sou feirante"
+Given Eu acessar página inicial "Dia de xepa"
+When Clicar no botão "x"
+And For ecaminhado para página de boas vindas
+And Clicar no botão "Sou feirante"
 And Clicar no botão "Já tenho cadastro"
 And For encaminhado para página de login
 Then Logo "Dia de Xepa" será exibido de forma centralizada na para superior da tela
@@ -41,10 +44,10 @@ When Clicar no campo "Senha"
 Then Campo senha será selecionado
 
 @not_executed
-Scenario: Preencher campo senha com "x;1234567890"
+Scenario: Preencher campo senha com "12345"
 Given Eu acessar página de login
 When Selecionar campo senha
-And Preencher campo senha com "x;1234567890"
+And Preencher campo senha com "12345"
 Then Campo será devidamente preenchido
 
 @not_executed
@@ -64,14 +67,14 @@ Then Usuário será encaminhado para página de recuperação de senha
 Scenario: Clicar no botão "Voltar"
 Given Eu acessar página de login
 When Selecionar botão "Voltar"
-Then Usuário será redirecionado para página inicial 
+Then Usuário será redirecionado para página de cadastro
 
 @not_executed
 Scenario: Clicar no botão "Login"
 Given Eu acessar página de login
 When Já cadastrado
 And Preencher campo Telefone com "(99) 99999-9999"
-And Preencher campo Senha com "x123456;"
+And Preencher campo Senha com "12345"
 And Selecionar botão "Login"
 Then Usuário será encaminhado para página de "perfil do feirante"
 
@@ -107,7 +110,7 @@ Scenario: Fazer login sem estar cadastrado
 Given Eu acessar página de login
 When Não ter feito cadastro
 And Preencher campo Telefone com "(99) 99999-9999"
-And Preencher campo Senha com "x123456;"
+And Preencher campo Senha com "12345"
 And Selecionar botão "Login"
 Then Mensagem "Telefone/Senha incorretos" será exibido destacada em vermelho
 

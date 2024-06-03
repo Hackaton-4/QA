@@ -126,5 +126,5 @@ Then Upload será feito e nova imagem será exibida
 Scenario: Alterar campo "Senha"
 Given Eu clicar no botão "Alterar Cadastro"
 When Selecionar campo "Senha"
-And Preencher campo com "z12345678;"
-Then Campo será preenchido com "z12345678;"
+And Preencher campo com "12354"
+Then Campo será preenchido com "12354;"
