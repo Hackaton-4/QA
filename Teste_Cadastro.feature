@@ -425,7 +425,7 @@ And For encaminhado para página de cadastro
 And Selecionar campo "Valor da sacola"
 And Preencher campo com "a" 
 Then Campo ficará em vermelho e mensagem "Insira um valor correto" aparecerá
-
+ 
 @not_executed
 Scenario: Não preencher o campo "Valor da sacola" 
 Given Eu acessar página  inicial "Dia de xepa"

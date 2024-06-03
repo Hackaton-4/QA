@@ -26,7 +26,7 @@ Given Clicar no botão "Saiba Mais" na página do usuário
 When For encaminhado para página de "Saiba Mais"
 And Descer a página
 Then "Quem somos nós" é exibido em formato carrossel 
-
+ 
 @not_executed
 Scenario: Ao clicar no ícone de instagram usuário é encaminhado para instagram de Dia de Xepa
 @not_executed
