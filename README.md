@@ -15,6 +15,6 @@ Mapeamento de testes funiconais e não funcionais foram feitos com base no docum
 - Página Inicial do Usuário
 - Página Saiba Mais
 
-## [Requisitos](https://www.notion.so/Requisitos-a8f97b7c025446508fb7e99347131705) 
+### Link para [Requisitos Dia de Xepa](https://www.notion.so/Requisitos-a8f97b7c025446508fb7e99347131705) 
 
 
